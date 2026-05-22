@@ -2,14 +2,14 @@
 
 The **936 Soldering Station** is an open-source hardware module designed for DIY 936-style soldering station builds and controller replacements. It features a transient-protected, multi-stage power architecture and integrated precision calibration points for high thermal accuracy and hardware longevity.
 
-![front.jpg](documentation/front.jpg)
+![fullbuild.jpg](documentation/fullbuild.jpg)
 
 ## Key Features
 
-* **Pure Analog Control:** Unlike many modern designs, this station uses no microcontrollers. By utilizing the widely available **LM358 op-amp**, the project remains easy to build, troubleshoot, and repair without the need for firmware flashing or specialized programming tools.
-* **Schmitt Trigger Switching:** Utilizes a tuned positive feedback loop (hysteresis) to ensure the MOSFET operates strictly in a "snap-action" mode.
-* **Multi-Stage Power Protection:** Implements an LM2596 buck converter to safely step down the main 24V input. This intermediate voltage then feeds the 7812 and 7805 linear regulators in parallel, preventing them from blowing out due to 24V hot-plug inductive spikes or thermal overload.
-* **Temperature Monitoring:** Support for a 3-wire digital voltmeter to provide real-time temperature readout via calibrated analog scaling.
+* **Pure Analog Control:** Unlike many modern designs, this station uses no microcontrollers. By utilizing the widely available **[LM358](https://www.lcsc.com/datasheet/C5423.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.3.xh&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVVTT1lbXjsOAxUeFF5JWBYZEEoKFBINSQcJGk4%3D) op-amp**, the project remains easy to build, troubleshoot, and repair without the need for firmware flashing or specialized programming tools.
+* **Schmitt Trigger Switching:** Utilizes to ensure the MOSFET operates strictly in a "snap-action" mode.
+* **Multi-Stage Power Protection:** Implements an [LM2596S ](https://www.lcsc.com/datasheet/C347423.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.1.xh&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVdUQFZdVDsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D) buck converter to safely step down the main 24V input. This intermediate voltage then feeds the [78L12](https://www.lcsc.com/datasheet/C5337208.pdf) and [78L05](https://www.lcsc.com/datasheet/C347258.pdf?spm=wm.sxq.inf.ggs___wm.ssy.em.2.tz&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVFXQ1JeXzsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D) linear regulators in parallel, preventing them from blowing out due to 24V hot-plug inductive spikes or thermal overload.
+* **Temperature Monitoring:** Using a 3-wire digital voltmeter to provide real-time temperature readout via calibrated analog scaling.
 * **Dual Test-Point Calibration:** Equipped with dedicated onboard test points to safely measure and tune the intermediate buck regulation voltage and the amplified thermal feedback.
 * **Linear Thermal Scaling:** Outbound thermocouple feedback is mapped linearly where 1V = 100°C, simplifying verification and calibration with any standard multimeter.
 
