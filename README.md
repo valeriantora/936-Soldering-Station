@@ -13,6 +13,8 @@ The **936 Soldering Station** is an open-source hardware module designed for DIY
 * **Dual Test-Point Calibration:** Equipped with dedicated onboard test points to safely measure and tune the intermediate buck regulation voltage and the amplified thermal feedback.
 * **Linear Thermal Scaling:** Outbound thermocouple feedback is mapped linearly where 1V = 100°C, simplifying verification and calibration with any standard multimeter.
 
+![board.jpg](documentation/board.jpg)
+
 ## Technical Specifications
 
 | Parameter | Specification |
