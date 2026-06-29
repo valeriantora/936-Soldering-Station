@@ -1,6 +1,6 @@
 # 936-Soldering-Station
 
-The **936 Soldering Station** is an open-source hardware module designed for DIY 936-style soldering station builds and controller replacements. It features a transient-protected, multi-stage power architecture and integrated precision calibration points for high thermal accuracy and hardware longevity.
+The **936 Soldering Station** is an open source hardware module designed for DIY 936 style soldering station builds and controller replacements. It features a transient protected, multi stage power architecture and integrated precision calibration points for high thermal accuracy and hardware longevity.
 
 ![fullbuild.jpg](documentation/fullbuild.jpg)
 
@@ -9,7 +9,7 @@ The **936 Soldering Station** is an open-source hardware module designed for DIY
 * **Pure Analog Control:** Unlike many modern designs, this station uses no microcontrollers. By utilizing the widely available **[LM358](https://www.lcsc.com/datasheet/C5423.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.3.xh&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVVTT1lbXjsOAxUeFF5JWBYZEEoKFBINSQcJGk4%3D) op-amp**, the project remains easy to build, troubleshoot, and repair without the need for firmware flashing or specialized programming tools.
 * **Schmitt Trigger Switching:** Utilizes to ensure the MOSFET operates strictly in a "snap-action" mode.
 * **Multi-Stage Power Protection:** Implements an [LM2596S ](https://www.lcsc.com/datasheet/C347423.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.1.xh&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVdUQFZdVDsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D) buck converter to safely step down the main 24V input. This intermediate voltage then feeds the [78L12](https://www.lcsc.com/datasheet/C5337208.pdf) and [78L05](https://www.lcsc.com/datasheet/C347258.pdf?spm=wm.sxq.inf.ggs___wm.ssy.em.2.tz&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVFXQ1JeXzsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D) linear regulators in parallel, preventing them from blowing out due to 24V hot-plug inductive spikes or thermal overload.
-* **Temperature Monitoring:** Using a 3-wire digital voltmeter to provide real-time temperature readout via calibrated analog scaling.
+* **Temperature Monitoring:** Using a 3 wire digital voltmeter to provide real time temperature readout via calibrated analog scaling.
 * **Dual Test-Point Calibration:** Equipped with dedicated onboard test points to safely measure and tune the intermediate buck regulation voltage and the amplified thermal feedback.
 * **Linear Thermal Scaling:** Outbound thermocouple feedback is mapped linearly where 1V = 100°C, simplifying verification and calibration with any standard multimeter.
 
@@ -42,7 +42,7 @@ The controller uses the LM358 op-amp (powered by the clean 12V rail) to amplify 
 
 ## Digital Temperature Display (Voltmeter)
 
-This board supports a real-time digital readout using a standard **3-wire DC Voltmeter**. Tuning the gain-setting potentiometer on the PCB allows the voltmeter to accurately display the temperature.
+This board supports a real-time digital readout using a standard **3 wire DC Voltmeter**. Tuning the gain setting potentiometer on the PCB allows the voltmeter to accurately display the temperature.
 
 ![3wirevoltmeter.jpg](documentation/3wirevoltmeter.jpg)
 
@@ -66,6 +66,25 @@ On a standard 5-pin aviation plug, **Pin 3 (the center pin)** is always designat
 | Ohm                                     | Thermocouple                                              |
 | -----------------------------------     | -----------------------------------                       |
 | ![936ohm.png](documentation/936ohm.png) | ![936thermocouple.png](documentation/936thermocouple.png) |
+
+## Assembly & Hardware Requirements
+
+To complete the full build beyond the main PCB assembly, you will need to source the following additional hardware parts:
+
+* **3D-Printed Enclosure**
+* **GX16 5-Pin Aviation Connector**
+* **0.28" 3 Wire Digital Voltmeter**
+* **DC Barrel Jack** (5.5mm × 2.1mm panel mount)
+* **KCD11 Rocker Switch**
+* **Slide Potentiometer** (75mm B103)
+* **Some Wires**
+* **Some M2 and M3 Screws** 
+
+![partlist.jpg](documentation/partlist.jpg)
+
+The slide potentiometer features two mounting holes designed to be directly self tapped using **M2 screws**. The exact same method applies to the 0.28" digital voltmeter, which uses **M3 screws** to cut threads directly into the pcb mounting holes for a secure and stable fit inside the 3D-printed enclosure.
+
+![screw.jpg](documentation/screw.jpg)
 
 ## Reference
 - [LM358 Datasheet](https://www.lcsc.com/datasheet/C5423.pdf?spm=wm.sxq.inf.ggs___wm.fly.bg.3.xh&lcsc_vid=RFNfUAVSFAAMUgJXRlgPBV0AFVNaAVRXFlcNVgIEE1YxVlNRTlBWVVVTT1lbXjsOAxUeFF5JWBYZEEoKFBINSQcJGk4%3D)
